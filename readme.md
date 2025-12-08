@@ -14,7 +14,7 @@ Transforms needlessly complex phrases into simpler ones—making reading more di
 - **Skip tracking** - Shows how many double negatives were found in excluded areas (code blocks)
 - **Notification display** - Brief 5-second notification shows replacement and skip counts
 - **Code-aware** - Automatically skips code blocks with wavy orange underlines on skipped instances
-- **Works everywhere** - Runs on any website
+- **Works _basically_ everywhere** - Runs on any website…except `github.com` and `raw.githubusercontent.com`
 - **Manual trigger** - Press **Ctrl+Shift+D** to re-run on demand
 
 ## Installation
@@ -88,11 +88,11 @@ The script currently replaces these 19 double negatives:
 ## Technical Details
 
 - **Version:** 1.0
-- **Works on:** All websites and local HTML files
+- **Works on:** All websites and local HTML files, except `github.com` and `raw.githubusercontent.com`
 - **Excludes:** Code blocks (`<pre>`, `<code>`, code-related classes, WordPress.com intralink content)
 - **Non-destructive:** Changes are visual only—refresh to restore original text
 - **No tracking:** Script runs entirely locally, sends no data anywhere
-- **Auto-updates:** Tampermonkey checks for updates from GitHub every 24 hours
+- **Auto-updates:** Tampermonkey checks for updates from GitHub based on your Userscript Update interval setting (every 24 hours, by default)
 
 ## Debug Logging
 
@@ -109,7 +109,7 @@ Double negatives add cognitive load. They force readers to parse what's *not not
 
 ## Contributing
 
-Found a double negative pattern that should be included? Have a suggestion? Open an issue or submit a pull request on [GitHub](https://github.com/bryanvillarin/double-negative-replacer).
+Found a double negative pattern that should be included? Have a suggestion? Open an [issue](https://github.com/bryanvillarin/double-negative-replacer/issues) or submit a pull request on [GitHub](https://github.com/bryanvillarin/double-negative-replacer).
 
 ## License
 
