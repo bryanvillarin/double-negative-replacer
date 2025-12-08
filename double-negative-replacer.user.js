@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         Double Negative Replacer
 // @namespace    https://github.com/bryanvillarin/double-negative-replacer
-// @version      1.0
+// @version      1.0.1
 // @description  Replaces double negatives with simpler alternatives on any webpage
 // @author       https://bryanvillarin.link
 // @match        *://*/*
 // @match        file:///*
+// @exclude      https://github.com/*
+// @exclude      https://raw.githubusercontent.com/*
 // @updateURL    https://raw.githubusercontent.com/bryanvillarin/double-negative-replacer/main/double-negative-replacer.user.js
 // @downloadURL  https://raw.githubusercontent.com/bryanvillarin/double-negative-replacer/main/double-negative-replacer.user.js
 // @grant        none
