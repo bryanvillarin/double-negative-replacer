@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Double Negative Replacer
 // @namespace    https://github.com/bryanvillarin/double-negative-replacer
-// @version      1.0.1
+// @version      1.0.2
 // @description  Replaces double negatives with simpler alternatives on any webpage
 // @author       https://bryanvillarin.link
 // @match        *://*/*
@@ -30,7 +30,6 @@
         'not unusual': 'usual',
         'not unnecessary': 'necessary',
         'not inconsiderable': 'considerable',
-        'unclear': 'clear',
         "don't disagree": 'agree',
         "don't not": 'do',
         'not wrong': 'right',
