@@ -61,7 +61,7 @@ The script uses muted, accessible colors:
 
 ## Supported Patterns
 
-The script currently replaces these 19 double negatives:
+The script currently replaces these 18 double negatives:
 
 | Double Negative | Simple Alternative |
 |----------------|-------------------|
@@ -75,7 +75,6 @@ The script currently replaces these 19 double negatives:
 | not unusual | usual |
 | not unnecessary | necessary |
 | not inconsiderable | considerable |
-| unclear | clear |
 | don't disagree | agree |
 | don't not | do |
 | not wrong | right |
@@ -87,7 +86,7 @@ The script currently replaces these 19 double negatives:
 
 ## Technical Details
 
-- **Version:** 1.0
+- **Version:** 1.0.2
 - **Works on:** All websites and local HTML files, except `github.com` and `raw.githubusercontent.com`
 - **Excludes:** Code blocks (`<pre>`, `<code>`, code-related classes, WordPress.com intralink content)
 - **Non-destructive:** Changes are visual only—refresh to restore original text
