@@ -1,70 +1,68 @@
 # Double Negative Replacer
 
-A Tampermonkey userscript that automatically replaces double negatives with clearer alternatives on the webpage you're viewing.
+I kept catching myself reading sentences twice. "Not uncommon" means... common? My brain would stall, parse the double negative, then move on. Every single time.
+
+So I built this [Tampermonkey](https://www.tampermonkey.net/) userscript. It runs on any webpage, finds double negatives, and swaps them for the straightforward version. Takes about 1 second after page load.
+
+## Contents
+
+* [What It Does](#what-it-does)
+* [Installation](#installation)
+* [How to Use It](#how-to-use-it)
+* [The 29 Patterns It Catches](#the-29-patterns-it-catches)
+* [Colors](#colors)
+* [Quirks](#quirks)
+* [Debug Logging](#debug-logging)
+* [Why This Matters](#why-this-matters)
+* [Contributing](#contributing)
+* [Technical Bits](#technical-bits)
+* [License](#license)
 
 ## What It Does
 
-Transforms needlessly complex phrases into simpler ones—making reading more direct and easier to understand.
+The script transforms hedged language into direct statements:
 
-## Features
+- "not uncommon" → **common**
+- "don't disagree" → **agree**
+- "not impossible" → **possible**
 
-- **Automatic replacement** - Runs 1 second after page load
-- **Visual highlighting** - Replaced text appears in soft cream so you can see what changed
-- **Hover tooltips** - Mouse over any replacement to see the original double negative
-- **Skip tracking** - Shows how many double negatives were found in excluded areas (code blocks)
-- **Notification display** - Brief 5-second notification shows replacement and skip counts
-- **Code-aware** - Automatically skips code blocks with wavy orange underlines on skipped instances
-- **Works _basically_ everywhere** - Runs on any website…except `github.com` and `raw.githubusercontent.com`
-- **Manual trigger** - Press **Ctrl+Shift+D** to re-run on demand
+You'll see replaced text highlighted in soft cream. Hover over any replacement to see what it originally said. A small notification appears for 5 seconds showing how many swaps happened.
 
 ## Installation
 
 1. Install [Tampermonkey](https://www.tampermonkey.net/) for your browser
 2. Click [here to install the script](https://github.com/bryanvillarin/double-negative-replacer/raw/main/double-negative-replacer.user.js)
-3. Enable "Allow access to file URLs" in Chrome (optional, for local HTML files):
+3. *(Optional)* For local HTML files in Chrome:
    - Go to `chrome://extensions/`
    - Find Tampermonkey → **Details**
    - Toggle **"Allow access to file URLs"** to ON
 
-## Usage
+That's it. Takes maybe 2 minutes.
 
-### Automatic Mode
+## How to Use It
 
-The script runs automatically 1 second after any page loads. If double negatives are found, you'll see:
-- A centered notification showing replacement and skip counts
-- Highlighted text where replacements occurred
-- Orange wavy underlines in code blocks for skipped instances
+### It runs automatically
 
-### Manual Trigger
+Load any page. Wait 1 second. Done.
 
-Press **Ctrl+Shift+D** anywhere on the page to re-run the replacement.
+If double negatives exist, you'll see:
 
-### View Details
+- Cream-colored highlights where replacements happened
+- Orange wavy underlines in code blocks *(skipped on purpose)*
+- A notification with the counts
 
-- **Replaced words** appear highlighted in soft cream (#F5F1E1)
-- **Hover over** any highlighted word to see the original text
-- **Skipped instances** in code blocks have orange wavy underlines (#FAA754)
+### Manual trigger
 
-### Reset
+Press **Ctrl+Shift+D** to re-run anytime.
 
-Simply refresh the page—all changes are temporary and visual only.
+### See original text
 
-## Color Palette
+Disable the script in Tampermonkey, then refresh. Changes are visual only—the underlying HTML stays untouched.
 
-The script uses muted, accessible colors:
+## The 29 Patterns It Catches
 
-- **Replaced highlights:** Soft cream (#F5F1E1)
-- **Replaced badge:** Soft cream (#F5F1E1) with dark brown text
-- **Skipped badge:** Peachy tone (#F7DCC6) with dark brown text
-- **Skipped underlines:** Bright orange wavy (#FAA754)
-- **Notification background:** Soft green (#E6F2E8)
-
-## Supported Patterns
-
-The script currently replaces these 18 double negatives:
-
-| Double Negative | Simple Alternative |
-|----------------|-------------------|
+| Double Negative | Becomes |
+| --- | --- |
 | not uncommon | common |
 | not insignificant | significant |
 | not unimportant | important |
@@ -83,40 +81,64 @@ The script currently replaces these 18 double negatives:
 | not infrequently | frequently |
 | wouldn't disagree | agree |
 | did not go unnoticed | people noticed |
+| not unattractive | attractive |
+| not unfamiliar | familiar |
+| not unaware | aware |
+| not without merit | has merit |
+| not unconvincing | convincing |
+| not unkind | kind |
+| not unhappy | happy |
+| not unpleasant | pleasant |
+| not unlike | like |
+| not unrelated | related |
+| don't dislike | like |
 
-## Technical Details
+## Colors
 
-- **Version:** 1.0.2
-- **Works on:** All websites and local HTML files, except `github.com` and `raw.githubusercontent.com`
-- **Excludes:** Code blocks (`<pre>`, `<code>`, code-related classes, WordPress.com intralink content)
-- **Non-destructive:** Changes are visual only—refresh to restore original text
-- **No tracking:** Script runs entirely locally, sends no data anywhere
-- **Auto-updates:** Tampermonkey checks for updates from GitHub based on your Userscript Update interval setting (every 24 hours, by default)
+Muted, accessible tones:
+
+- **Replaced text:** Soft cream (`#F5F1E1`)
+- **Skipped instances:** Orange wavy underline (`#FAA754`)
+- **Notification:** Soft green (`#E6F2E8`)
+
+## Quirks
+
+Here's the thing—the script skips code blocks intentionally. You don't want it rewriting your `<pre>` or `<code>` elements. It also excludes `github.com` and `raw.githubusercontent.com` entirely *(otherwise it would mess with the script's own source code)*.
+
+Also: changes are visual only. The underlying HTML stays untouched. Disable the script and refresh to see original text.
 
 ## Debug Logging
 
-The script logs replacement activity to the browser console. Open DevTools (F12) and check the Console tab to see:
-- `[DNR] Replacement #X: original → replacement`
-- Parent element information
-- Text context around each replacement
+Open DevTools (F12) → Console tab. You'll see:
 
-This is helpful for troubleshooting or verifying what the script is doing.
+```
+[DNR] Replacement #1: not uncommon → common
+```
+
+Plus parent element info and surrounding text context. Helpful for troubleshooting.
 
 ## Why This Matters
 
-Double negatives add cognitive load. They force readers to parse what's *not not* true instead of simply stating what *is* true. This script reveals the straightforward meaning hiding beneath hedged language—making communication clearer and more direct.
+Double negatives add cognitive load. They force your brain to parse what's *not not* true instead of simply stating what *is* true.
+
+It helps when reading articles in my desktop browser. Catches the hedged language that slows me down before I even notice I've re-read a sentence. 😎
 
 ## Contributing
 
-Found a double negative pattern that should be included? Have a suggestion? Open an [issue](https://github.com/bryanvillarin/double-negative-replacer/issues) or submit a pull request on [GitHub](https://github.com/bryanvillarin/double-negative-replacer).
+Found a double negative pattern that should be included? Open an [issue](https://github.com/bryanvillarin/double-negative-replacer/issues) or submit a pull request.
+
+## Technical Bits
+
+- **Version:** 1.1.0
+- **Works on:** All websites and local HTML files *(except GitHub)*
+- **No tracking:** Runs entirely locally, sends no data anywhere
+- **Auto-updates:** Tampermonkey checks for updates based on your settings *(default: every 24 hours)*
 
 ## License
 
-MIT License - feel free to use, modify, and share.
+[MIT License](LICENSE) — use it, modify it, share it.
 
 ---
 
-**Note:** This script modifies visible text only. It doesn't change the underlying HTML or send data anywhere. Refresh the page to restore original content.
-
-**Developed by:** [Bryan Villarin](https://bryanvillarin.link)  
-**Blog:** [All Narfed Up](https://allnarfedup.blog)
+- **Developed by:** [Bryan Villarin](https://bryanvillarin.link)
+- **Blog:** [All Narfed Up](https://allnarfedup.blog)

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Double Negative Replacer
 // @namespace    https://github.com/bryanvillarin/double-negative-replacer
-// @version      1.0.2
+// @version      1.1.0
 // @description  Replaces double negatives with simpler alternatives on any webpage
 // @author       https://bryanvillarin.link
 // @match        *://*/*
@@ -37,7 +37,18 @@
         "won't not": 'will',
         'not infrequently': 'frequently',
         "wouldn't disagree": 'agree',
-        'did not go unnoticed': 'people noticed'
+        'did not go unnoticed': 'people noticed',
+        'not unattractive': 'attractive',
+        'not unfamiliar': 'familiar',
+        'not unaware': 'aware',
+        'not without merit': 'has merit',
+        'not unconvincing': 'convincing',
+        'not unkind': 'kind',
+        'not unhappy': 'happy',
+        'not unpleasant': 'pleasant',
+        'not unlike': 'like',
+        'not unrelated': 'related',
+        "don't dislike": 'like'
     };
 
     let replacementCount = 0;
