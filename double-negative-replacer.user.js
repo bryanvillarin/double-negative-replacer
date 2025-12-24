@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Double Negative Replacer
 // @namespace    https://github.com/bryanvillarin/double-negative-replacer
-// @version      1.1.0
+// @version      1.2.0
 // @description  Replaces double negatives with simpler alternatives on any webpage
 // @author       https://bryanvillarin.link
 // @match        *://*/*
@@ -48,7 +48,18 @@
         'not unpleasant': 'pleasant',
         'not unlike': 'like',
         'not unrelated': 'related',
-        "don't dislike": 'like'
+        "don't dislike": 'like',
+        // New patterns added in v1.2.0
+        'not displeased': 'pleased',
+        'not unwilling': 'willing',
+        'not unfair': 'fair',
+        'not untrue': 'true',
+        'not unintelligent': 'intelligent',
+        'not unpopular': 'popular',
+        'not unsurprising': 'expected',
+        'not unheard of': 'common',
+        'not uncomplicated': 'complicated',
+        'not uninformed': 'informed'
     };
 
     let replacementCount = 0;

@@ -9,7 +9,7 @@ So I built this [Tampermonkey](https://www.tampermonkey.net/) userscript. It run
 * [What It Does](#what-it-does)
 * [Installation](#installation)
 * [How to Use It](#how-to-use-it)
-* [The 29 Patterns It Catches](#the-29-patterns-it-catches)
+* [Patterns It Catches](#patterns-it-catches)
 * [Colors](#colors)
 * [Quirks](#quirks)
 * [Debug Logging](#debug-logging)
@@ -26,30 +26,30 @@ The script transforms hedged language into direct statements:
 - "don't disagree" → **agree**
 - "not impossible" → **possible**
 
-You'll see replaced text highlighted in soft cream. Hover over any replacement to see what it originally said. A small notification appears for 5 seconds showing how many swaps happened.
+You'll see replaced text highlighted in soft cream. Hover over any replacement to see what it originally said. A small notification appears for five seconds showing how many swaps happened.
 
 ## Installation
 
-1. Install [Tampermonkey](https://www.tampermonkey.net/) for your browser
-2. Click [here to install the script](https://github.com/bryanvillarin/double-negative-replacer/raw/main/double-negative-replacer.user.js)
+1. Install [Tampermonkey](https://www.tampermonkey.net/) for your browser.
+2. [Click here to install the script](https://github.com/bryanvillarin/double-negative-replacer/raw/main/double-negative-replacer.user.js).
 3. *(Optional)* For local HTML files in Chrome:
    - Go to `chrome://extensions/`
    - Find Tampermonkey → **Details**
    - Toggle **"Allow access to file URLs"** to ON
 
-That's it. Takes maybe 2 minutes.
+That's it. Takes _maybe_ two minutes.
 
 ## How to Use It
 
 ### It runs automatically
 
-Load any page. Wait 1 second. Done.
+Load any page. Wait one second. Done.
 
 If double negatives exist, you'll see:
 
-- Cream-colored highlights where replacements happened
-- Orange wavy underlines in code blocks *(skipped on purpose)*
-- A notification with the counts
+- Cream-colored highlights where replacements happened.
+- Orange wavy underlines in code blocks. *(Skipped on purpose.)*
+- A notification with the counts.
 
 ### Manual trigger
 
@@ -59,7 +59,7 @@ Press **Ctrl+Shift+D** to re-run anytime.
 
 Disable the script in Tampermonkey, then refresh. Changes are visual only—the underlying HTML stays untouched.
 
-## The 29 Patterns It Catches
+## Patterns It Catches
 
 | Double Negative | Becomes |
 | --- | --- |
@@ -92,6 +92,16 @@ Disable the script in Tampermonkey, then refresh. Changes are visual only—the 
 | not unlike | like |
 | not unrelated | related |
 | don't dislike | like |
+| not displeased | pleased |
+| not unwilling | willing |
+| not unfair | fair |
+| not untrue | true |
+| not unintelligent | intelligent |
+| not unpopular | popular |
+| not unsurprising | expected |
+| not unheard of | common |
+| not uncomplicated | complicated |
+| not uninformed | informed |
 
 ## Colors
 
@@ -129,7 +139,8 @@ Found a double negative pattern that should be included? Open an [issue](https:/
 
 ## Technical Bits
 
-- **Version:** 1.1.0
+- **Version:** 1.2.0
+- **Patterns:** 39
 - **Works on:** All websites and local HTML files *(except GitHub)*
 - **No tracking:** Runs entirely locally, sends no data anywhere
 - **Auto-updates:** Tampermonkey checks for updates based on your settings *(default: every 24 hours)*
