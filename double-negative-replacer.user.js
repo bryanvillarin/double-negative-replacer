@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Double Negative Replacer
 // @namespace    https://github.com/bryanvillarin/double-negative-replacer
-// @version      1.2.0
+// @version      1.3.0
 // @description  Replaces double negatives with simpler alternatives on any webpage
 // @author       https://bryanvillarin.link
 // @match        *://*/*
@@ -59,7 +59,18 @@
         'not unsurprising': 'expected',
         'not unheard of': 'common',
         'not uncomplicated': 'complicated',
-        'not uninformed': 'informed'
+        'not uninformed': 'informed',
+        // New patterns added in v1.3.0
+        'not unsuccessful': 'successful',
+        'not unworthy': 'worthy',
+        'not indifferent': 'interested',
+        'not unimpressed': 'impressed',
+        'not inexperienced': 'experienced',
+        'not unsatisfied': 'satisfied',
+        'not unnoticed': 'noticed',
+        'not insensitive': 'sensitive',
+        'not incapable': 'capable',
+        'not unremarkable': 'remarkable'
     };
 
     let replacementCount = 0;
