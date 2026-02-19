@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Double Negative Replacer
 // @namespace    https://github.com/bryanvillarin/double-negative-replacer
-// @version      1.3.0
+// @version      1.4.0
 // @description  Replaces double negatives with simpler alternatives on any webpage
 // @author       https://bryanvillarin.link
 // @match        *://*/*
@@ -70,7 +70,14 @@
         'not unnoticed': 'noticed',
         'not insensitive': 'sensitive',
         'not incapable': 'capable',
-        'not unremarkable': 'remarkable'
+        'not unremarkable': 'remarkable',
+        // New patterns added in v1.4.0
+        'no reason not to': 'worth doing',
+        'should never not be': 'should always be',
+        "don't forget": 'remember',
+        'never not': 'always',
+        "wouldn't be unreasonable": 'would be reasonable',
+        'not unrealistic': 'realistic'
     };
 
     let replacementCount = 0;

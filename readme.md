@@ -112,6 +112,12 @@ Disable the script in Tampermonkey, then refresh. Changes are visual only—the 
 | not insensitive | sensitive |
 | not incapable | capable |
 | not unremarkable | remarkable |
+| no reason not to | worth doing |
+| should never not be | should always be |
+| don't forget | remember |
+| never not | always |
+| wouldn't be unreasonable | would be reasonable |
+| not unrealistic | realistic |
 
 ## Colors
 
@@ -149,8 +155,8 @@ Found a double negative pattern that should be included? Open an [issue](https:/
 
 ## Technical Bits
 
-- **Version:** 1.3.0
-- **Patterns:** 49
+- **Version:** 1.4.0
+- **Patterns:** 55
 - **Works on:** All websites and local HTML files *(except GitHub)*
 - **No tracking:** Runs entirely locally, sends no data anywhere
 - **Auto-updates:** Tampermonkey checks for updates based on your settings *(default: every 24 hours)*
