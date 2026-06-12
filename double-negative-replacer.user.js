@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Double Negative Replacer
 // @namespace    https://github.com/bryanvillarin/double-negative-replacer
-// @version      1.4.0
+// @version      1.5.0
 // @description  Replaces double negatives with simpler alternatives on any webpage
 // @author       https://bryanvillarin.link
 // @match        *://*/*
@@ -71,6 +71,8 @@
         'not insensitive': 'sensitive',
         'not incapable': 'capable',
         'not unremarkable': 'remarkable',
+        // New patterns added in v1.5.0
+        "can't not": 'have to',
         // New patterns added in v1.4.0
         'no reason not to': 'worth doing',
         'should never not be': 'should always be',
