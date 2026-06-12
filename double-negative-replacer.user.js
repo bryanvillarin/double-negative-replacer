@@ -30,13 +30,13 @@
         'not unusual': 'usual',
         'not unnecessary': 'necessary',
         'not inconsiderable': 'considerable',
-        "don't disagree": 'agree',
-        "don't not": 'do',
+        "don['\u2019]t disagree": 'agree',
+        "don['\u2019]t not": 'do',
         'not wrong': 'right',
         'not unsalvagable': 'salvageable',
-        "won't not": 'will',
+        "won['\u2019]t not": 'will',
         'not infrequently': 'frequently',
-        "wouldn't disagree": 'agree',
+        "wouldn['\u2019]t disagree": 'agree',
         'did not go unnoticed': 'people noticed',
         'not unattractive': 'attractive',
         'not unfamiliar': 'familiar',
@@ -48,7 +48,7 @@
         'not unpleasant': 'pleasant',
         'not unlike': 'like',
         'not unrelated': 'related',
-        "don't dislike": 'like',
+        "don['\u2019]t dislike": 'like',
         // New patterns added in v1.2.0
         'not displeased': 'pleased',
         'not unwilling': 'willing',
@@ -72,13 +72,13 @@
         'not incapable': 'capable',
         'not unremarkable': 'remarkable',
         // New patterns added in v1.5.0
-        "can't not": 'have to',
+        "can['\u2019]t not": 'have to',
         // New patterns added in v1.4.0
         'no reason not to': 'worth doing',
         'should never not be': 'should always be',
-        "don't forget": 'remember',
+        "don['\u2019]t forget": 'remember',
         'never not': 'always',
-        "wouldn't be unreasonable": 'would be reasonable',
+        "wouldn['\u2019]t be unreasonable": 'would be reasonable',
         'not unrealistic': 'realistic'
     };
 
