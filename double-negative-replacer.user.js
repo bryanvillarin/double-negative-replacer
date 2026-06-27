@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Double Negative Replacer
 // @namespace    https://github.com/bryanvillarin/double-negative-replacer
-// @version      1.5.0
+// @version      1.6.1
 // @description  Replaces double negatives with simpler alternatives on any webpage
 // @author       https://bryanvillarin.link
 // @match        *://*/*
@@ -138,7 +138,9 @@
             // Build array of all matches
             const allMatches = [];
             for (const [doubled, simple] of Object.entries(replacements)) {
-                const regex = new RegExp(doubled, 'gi');
+                // Word boundaries prevent partial-word matches (e.g. "won't not"
+                // matching inside "won't notice" and leaving a dangling "ice").
+                const regex = new RegExp(`\\b${doubled}\\b`, 'gi');
                 let match;
                 while ((match = regex.exec(text)) !== null) {
                     allMatches.push({
@@ -203,7 +205,9 @@
             const allMatches = [];
             
             for (const [doubled, simple] of Object.entries(replacements)) {
-                const regex = new RegExp(doubled, 'gi');
+                // Word boundaries prevent partial-word matches (e.g. "won't not"
+                // matching inside "won't notice" and leaving a dangling "ice").
+                const regex = new RegExp(`\\b${doubled}\\b`, 'gi');
                 let match;
                 
                 while ((match = regex.exec(text)) !== null) {

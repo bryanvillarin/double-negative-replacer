@@ -156,7 +156,7 @@ Found a double negative pattern that should be included? Open an [issue](https:/
 
 ## Technical Bits
 
-- **Version:** 1.6.0
+- **Version:** 1.6.1
 - **Patterns:** 56
 - **Works on:** All websites and local HTML files *(except GitHub)*
 - **No tracking:** Runs entirely locally, sends no data anywhere
